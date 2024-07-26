@@ -1,0 +1,13 @@
+Results: Analyzing model performance
+
+Observations on Overfitting:
+
+Overfitting becomes noticeable after approximately 5 epochs, as seen from the increasing gap between the training and testing accuracy. The model's accuracy on the training data continues to improve with each epoch, while the accuracy on the testing data plateaus or starts to decline. This behavior is typical of overfitting, where the model learns to fit the training data too closely, capturing noise and irrelevant details, which leads to a decrease in its ability to generalize to new, unseen data. 
+
+Handling Overfitting:
+
+To address overfitting, dropout layers are already implemented in the model with a dropout rate of 0.2 after the fully connected layer. Increasing the dropout rate to 0.3 after the convolutional layers might help reduce overfitting further. Dropout layers introduce randomness into the network during training by randomly setting a fraction of input units to zero at each update. This prevents the network from relying too much on particular weights, making it more robust and reducing overfitting.
+
+Share Structure Property and Invariance Property:
+
+CNNs achieve invariance by sharing parameters across space. It learns to detect patterns irrespective of their location in the image. This property is achieved through weight sharing, where the same set of weights (filter) is applied across the entire input image. The convolutional layers in the CNN learn to detect low-level features like edges, textures, etc., which are essential for achieving the Share Structure Property. This weight sharing significantly reduces the number of parameters, making the model computationally efficient and helping it generalize better to new data.
